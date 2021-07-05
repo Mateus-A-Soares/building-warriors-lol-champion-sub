@@ -1,0 +1,22 @@
+micronaut:
+  application:
+    name: buildingWarriorsLolRest
+
+nats:
+  addresses:
+    - nats://${API_NATS_HOST:localhost}:${API_NATS_PORT:4222}
+  username: ${API_NATS_USERNAME}
+  password: ${API_NATS_PASSWORD}
+
+cassandra:
+  default:
+    basic:
+      contact-points:
+        - ${API_DB_HOST:localhost}:${API_DB_PORT:9042}
+      session-keyspace: ${API_DB_KEYSPACE}
+      load-balancing-policy:
+        local-datacenter: datacenter1
+
+endpoints:
+  health:
+    enabled: true
