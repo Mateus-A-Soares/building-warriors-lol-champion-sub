@@ -1,17 +1,17 @@
-package br.com.iupp.buildingwarriors.infrastructure.repository
+package br.com.iupp.buildingwarriors.infrastructure.database
 
 import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.championEntityToModel
 import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.cqlRowToChampion
 import br.com.iupp.buildingwarriors.core.model.Champion
-import br.com.iupp.buildingwarriors.core.ports.ChampionRepositoryPort
-import br.com.iupp.buildingwarriors.infrastructure.repository.entity.ChampionEntity
+import br.com.iupp.buildingwarriors.core.ports.ChampionDatabasePort
+import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionEntity
 import com.datastax.oss.driver.api.core.CqlSession
 import com.datastax.oss.driver.api.core.cql.SimpleStatement
 import java.util.*
 import javax.inject.Singleton
 
 @Singleton
-class ChampionRepositoryImpl(private val cqlSession: CqlSession) : ChampionRepositoryPort {
+class ChampionDatabase(private val cqlSession: CqlSession) : ChampionDatabasePort {
 
     override fun findById(id: UUID): Optional<Champion> {
         return Optional.ofNullable(

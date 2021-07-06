@@ -1,9 +1,9 @@
-package br.com.iupp.buildingwarriors.entrypoint.listener
+package br.com.iupp.buildingwarriors.infrastructure.broker.listener
 
-import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.championEventToModel
+import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.Companion.championEventToModel
 import br.com.iupp.buildingwarriors.core.ports.ChampionServicePort
-import br.com.iupp.buildingwarriors.entrypoint.listener.request.ChampionEvent
-import br.com.iupp.buildingwarriors.entrypoint.listener.request.Operation
+import br.com.iupp.buildingwarriors.infrastructure.broker.request.ChampionEvent
+import br.com.iupp.buildingwarriors.infrastructure.broker.request.Operation
 import io.micronaut.messaging.annotation.MessageBody
 import io.micronaut.nats.annotation.NatsListener
 import io.micronaut.nats.annotation.Subject

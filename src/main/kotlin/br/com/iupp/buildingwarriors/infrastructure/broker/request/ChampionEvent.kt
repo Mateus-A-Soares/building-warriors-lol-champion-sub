@@ -1,4 +1,4 @@
-package br.com.iupp.buildingwarriors.entrypoint.listener.request
+package br.com.iupp.buildingwarriors.infrastructure.broker.request
 
 data class ChampionEvent(
     val operation: Operation,

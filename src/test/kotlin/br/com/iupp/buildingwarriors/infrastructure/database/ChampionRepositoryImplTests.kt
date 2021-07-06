@@ -1,9 +1,9 @@
-package br.com.iupp.buildingwarriors.infrastructure.repository
+package br.com.iupp.buildingwarriors.infrastructure.database
 
 import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.championEntityToModel
-import br.com.iupp.buildingwarriors.infrastructure.repository.entity.ChampionDifficulty
-import br.com.iupp.buildingwarriors.infrastructure.repository.entity.ChampionEntity
-import br.com.iupp.buildingwarriors.infrastructure.repository.entity.ChampionRole
+import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionDifficulty
+import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionEntity
+import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionRole
 import com.datastax.oss.driver.api.core.CqlSession
 import com.datastax.oss.driver.api.core.cql.Row
 import com.datastax.oss.driver.api.core.cql.SimpleStatement
@@ -18,7 +18,7 @@ import java.util.*
 @MicronautTest
 class ChampionRepositoryImplTests : AnnotationSpec() {
     private val cqlSession: CqlSession = mockk<CqlSession>(relaxed = true)
-    private val championRepositoryImpl = ChampionRepositoryImpl(cqlSession)
+    private val championRepositoryImpl = ChampionDatabase(cqlSession)
     private val row: Row = mockk<Row>()
     private val champion = ChampionEntity(
         id = UUID.randomUUID(),

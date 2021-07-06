@@ -5,11 +5,10 @@ import br.com.iupp.buildingwarriors.core.model.Champion
 import br.com.iupp.buildingwarriors.core.model.ChampionDifficulty.MODERATE
 import br.com.iupp.buildingwarriors.core.model.ChampionRole.MAGE
 import br.com.iupp.buildingwarriors.core.model.ChampionRole.TANK
-import br.com.iupp.buildingwarriors.core.ports.ChampionRepositoryPort
-import br.com.iupp.buildingwarriors.entrypoint.listener.handler.exception.EntityNotFound
+import br.com.iupp.buildingwarriors.core.ports.ChampionDatabasePort
+import br.com.iupp.buildingwarriors.infrastructure.broker.handler.exception.EntityNotFound
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.AnnotationSpec
-import io.kotest.matchers.shouldBe
 import io.micronaut.test.extensions.kotest.annotation.MicronautTest
 import io.mockk.every
 import io.mockk.mockk
@@ -19,9 +18,9 @@ import java.util.*
 @MicronautTest
 class ChampionServiceImplTest : AnnotationSpec() {
 
-    private val mockedRepository = mockk<ChampionRepositoryPort>()
+    private val mockedRepository = mockk<ChampionDatabasePort>()
 
-    private val service = ChampionServiceImpl(mockedRepository)
+    private val service = ChampionService(mockedRepository)
 
 //    @Test
 //    fun `deve encontrar campeao cadastrado`() {

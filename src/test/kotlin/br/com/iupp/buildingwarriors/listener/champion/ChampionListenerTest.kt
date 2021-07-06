@@ -2,10 +2,10 @@ package br.com.iupp.buildingwarriors.listener.champion
 
 import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.championEventToModel
 import br.com.iupp.buildingwarriors.core.ports.ChampionServicePort
-import br.com.iupp.buildingwarriors.entrypoint.listener.ChampionListener
-import br.com.iupp.buildingwarriors.entrypoint.listener.request.ChampionEvent
-import br.com.iupp.buildingwarriors.entrypoint.listener.request.ChampionRequest
-import br.com.iupp.buildingwarriors.entrypoint.listener.request.Operation.*
+import br.com.iupp.buildingwarriors.infrastructure.broker.listener.ChampionListener
+import br.com.iupp.buildingwarriors.infrastructure.broker.request.ChampionEvent
+import br.com.iupp.buildingwarriors.infrastructure.broker.request.ChampionRequest
+import br.com.iupp.buildingwarriors.infrastructure.broker.request.Operation.*
 import io.kotest.core.spec.style.AnnotationSpec
 import io.micronaut.test.extensions.kotest.annotation.MicronautTest
 import io.mockk.every
