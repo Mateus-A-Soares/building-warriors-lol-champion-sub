@@ -1,8 +1,7 @@
-package br.com.iupp.buildingwarriors.listener.champion
+package br.com.iupp.buildingwarriors.infrastructure.broker.listener
 
 import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.Companion.championEventToModel
 import br.com.iupp.buildingwarriors.core.ports.ChampionServicePort
-import br.com.iupp.buildingwarriors.infrastructure.broker.listener.ChampionListener
 import br.com.iupp.buildingwarriors.infrastructure.broker.request.ChampionEvent
 import br.com.iupp.buildingwarriors.infrastructure.broker.request.ChampionRequest
 import br.com.iupp.buildingwarriors.infrastructure.broker.request.Operation.*

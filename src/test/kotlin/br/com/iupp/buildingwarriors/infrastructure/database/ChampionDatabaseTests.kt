@@ -16,7 +16,7 @@ import io.mockk.mockk
 import java.util.*
 
 @MicronautTest
-class ChampionRepositoryImplTests : AnnotationSpec() {
+class ChampionDatabaseTests : AnnotationSpec() {
     private val cqlSession: CqlSession = mockk<CqlSession>(relaxed = true)
     private val championRepositoryImpl = ChampionDatabase(cqlSession)
     private val row: Row = mockk<Row>()
