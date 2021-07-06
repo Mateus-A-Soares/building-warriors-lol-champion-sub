@@ -1,6 +1,6 @@
 package br.com.iupp.buildingwarriors.infrastructure.database
 
-import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.championEntityToModel
+import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.Companion.championEntityToModel
 import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionDifficulty
 import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionEntity
 import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionRole

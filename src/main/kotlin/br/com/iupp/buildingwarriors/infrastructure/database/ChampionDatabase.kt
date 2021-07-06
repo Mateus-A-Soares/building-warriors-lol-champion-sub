@@ -1,7 +1,7 @@
 package br.com.iupp.buildingwarriors.infrastructure.database
 
-import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.championEntityToModel
-import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.cqlRowToChampion
+import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.Companion.championEntityToModel
+import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.Companion.cqlRowToChampion
 import br.com.iupp.buildingwarriors.core.model.Champion
 import br.com.iupp.buildingwarriors.core.ports.ChampionDatabasePort
 import br.com.iupp.buildingwarriors.infrastructure.database.entity.ChampionEntity

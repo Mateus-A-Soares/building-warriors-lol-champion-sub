@@ -1,6 +1,6 @@
 package br.com.iupp.buildingwarriors.core.service
 
-import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper
+import br.com.iupp.buildingwarriors.core.mapper.ChampionMapper.Companion.championToEntity
 import br.com.iupp.buildingwarriors.core.model.Champion
 import br.com.iupp.buildingwarriors.core.ports.ChampionDatabasePort
 import br.com.iupp.buildingwarriors.core.ports.ChampionServicePort
@@ -10,7 +10,7 @@ import javax.inject.Singleton
 open class ChampionService(private val championDatabase: ChampionDatabasePort) : ChampionServicePort {
 
     override fun saveChampion(champion: Champion) {
-        championDatabase.save(ChampionMapper.championToEntity(champion))
+        championDatabase.save(championToEntity(champion))
     }
 
     override fun updateChampion(
@@ -23,7 +23,7 @@ open class ChampionService(private val championDatabase: ChampionDatabasePort) :
                 if (!this@with.shortDescription.isNullOrBlank()) shortDescription = this@with.shortDescription
                 if (this@with.role != null) role = this@with.role
                 if (this@with.difficulty != null) difficulty = this@with.difficulty
-                championDatabase.update(ChampionMapper.championToEntity(this))
+                championDatabase.update(championToEntity(this))
             }
         }
     }
